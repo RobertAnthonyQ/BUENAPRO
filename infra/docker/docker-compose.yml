@@ -1,0 +1,111 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: buenapro
+      POSTGRES_USER: buenapro
+      POSTGRES_PASSWORD: buenapro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U buenapro -d buenapro"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  web:
+    build:
+      context: ../..
+      dockerfile: infra/docker/web.Dockerfile
+    restart: unless-stopped
+    env_file:
+      - ../../.env.local
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql://buenapro:buenapro@postgres:5432/buenapro}
+      DEV_TENANT_ID: ${DEV_TENANT_ID:-}
+    ports:
+      - "3000:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  scheduler:
+    build:
+      context: ../..
+      dockerfile: infra/docker/worker.Dockerfile
+    restart: unless-stopped
+    env_file:
+      - ../../.env.local
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql://buenapro:buenapro@postgres:5432/buenapro}
+      WORKER_ID: scheduler
+    command: ["buenapro-worker", "schedule"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  worker-io:
+    build:
+      context: ../..
+      dockerfile: infra/docker/worker.Dockerfile
+    restart: unless-stopped
+    env_file:
+      - ../../.env.local
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql://buenapro:buenapro@postgres:5432/buenapro}
+      WORKER_ID: worker-io
+    command: ["buenapro-worker", "run", "--queues", "io"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  worker-llm:
+    build:
+      context: ../..
+      dockerfile: infra/docker/worker.Dockerfile
+    restart: unless-stopped
+    env_file:
+      - ../../.env.local
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql://buenapro:buenapro@postgres:5432/buenapro}
+      WORKER_ID: worker-llm
+    command: ["buenapro-worker", "run", "--queues", "llm"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  worker-match:
+    build:
+      context: ../..
+      dockerfile: infra/docker/worker.Dockerfile
+    restart: unless-stopped
+    env_file:
+      - ../../.env.local
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql://buenapro:buenapro@postgres:5432/buenapro}
+      WORKER_ID: worker-match
+    command: ["buenapro-worker", "run", "--queues", "match"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  worker-notify:
+    build:
+      context: ../..
+      dockerfile: infra/docker/worker.Dockerfile
+    restart: unless-stopped
+    env_file:
+      - ../../.env.local
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql://buenapro:buenapro@postgres:5432/buenapro}
+      WORKER_ID: worker-notify
+    command: ["buenapro-worker", "run", "--queues", "notify"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  postgres_data:

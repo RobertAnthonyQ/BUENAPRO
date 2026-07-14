@@ -1,0 +1,29 @@
+[project]
+name = "buenapro-seace-worker"
+version = "0.1.0"
+description = "Worker de ingesta y extraccion para SEACE < 8 UIT"
+requires-python = ">=3.12"
+dependencies = [
+  "google-genai",
+  "httpx",
+  "orjson",
+  "psycopg[binary]",
+  "pydantic",
+  "pydantic-settings",
+  "python-dotenv",
+  "tenacity"
+]
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+buenapro-worker = "buenapro_worker.cli:main"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"

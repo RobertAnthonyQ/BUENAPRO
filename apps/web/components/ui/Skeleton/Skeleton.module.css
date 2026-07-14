@@ -1,0 +1,17 @@
+.wrap {
+  display: grid;
+  gap: var(--bp-space-2);
+}
+
+.wrap span {
+  animation: pulse 1.2s ease-in-out infinite;
+  background: var(--bp-color-subtle);
+  border-radius: var(--bp-radius-md);
+  height: 14px;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.55;
+  }
+}

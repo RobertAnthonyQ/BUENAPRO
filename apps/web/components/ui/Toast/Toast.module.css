@@ -1,0 +1,7 @@
+.toast {
+  background: var(--bp-color-text);
+  border-radius: var(--bp-radius-lg);
+  box-shadow: var(--bp-shadow-popover);
+  color: white;
+  padding: 10px 12px;
+}

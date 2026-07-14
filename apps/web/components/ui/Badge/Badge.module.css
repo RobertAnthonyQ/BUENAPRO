@@ -1,0 +1,41 @@
+.badge {
+  align-items: center;
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  min-height: 24px;
+  padding: 5px 9px;
+  white-space: nowrap;
+}
+
+.green {
+  background: var(--bp-color-success-soft);
+  color: var(--bp-color-success);
+}
+
+.amber {
+  background: var(--bp-color-warning-soft);
+  color: var(--bp-color-warning);
+}
+
+.red {
+  background: var(--bp-color-danger-soft);
+  color: var(--bp-color-danger);
+}
+
+.neutral {
+  background: var(--bp-color-review-soft);
+  color: var(--bp-color-review);
+}
+
+.brand {
+  background: var(--bp-color-brand-soft);
+  color: var(--bp-color-brand);
+}
+
+.sage {
+  background: var(--bp-color-sage-soft);
+  color: var(--bp-color-sage);
+}

@@ -1,0 +1,9 @@
+.bell {
+  align-items: center;
+  border: 1px solid var(--bp-color-border);
+  border-radius: 999px;
+  display: inline-flex;
+  height: 34px;
+  justify-content: center;
+  width: 34px;
+}

@@ -1,0 +1,15 @@
+.button {
+  align-items: center;
+  background: var(--bp-color-panel);
+  border: 1px solid var(--bp-color-border);
+  border-radius: var(--bp-radius-md);
+  cursor: pointer;
+  display: inline-flex;
+  height: 38px;
+  justify-content: center;
+  width: 38px;
+}
+
+.button:hover {
+  background: var(--bp-color-subtle);
+}

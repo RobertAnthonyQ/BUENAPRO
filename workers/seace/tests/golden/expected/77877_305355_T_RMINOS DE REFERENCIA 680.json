@@ -1,0 +1,92 @@
+{
+  "contract": {
+    "objeto": "Servicio de seguridad y vigilancia para las instalaciones del IESTP. Luis E. Valcárcel.",
+    "entidad": "INSTITUTO DE EDUCACIÓN SUPERIOR TECNOLÓGICO PÚBLICO LUIS E. VALCÁRCEL",
+    "area_usuaria": "Unidad Administrativa - IESTP. LEV",
+    "lugar_ejecucion": "Instalaciones del I.E.S.T.P. Luis E. Valcárcel, Pampa inalámbrica s/n Distrito Ilo, Provincia de Ilo, Departamento de Moquegua.",
+    "plazo_dias": 9,
+    "plazo_texto": "Nueve (09) días efectivos en 23 días calendarios correspondientes al mes de julio del 2026",
+    "valor_estimado_monto": null,
+    "moneda": "PEN",
+    "modalidad": null,
+    "condicion_inicio": null
+  },
+  "execution": {
+    "actividades": [
+      "Controlar la entrada y salida de personas.",
+      "Velar por la seguridad de los bienes, muebles y enseres de la Institución.",
+      "Vigilar las entradas de la Institución, prohibiendo el acceso a las personas no autorizadas.",
+      "Registrar las ocurrencias diarias en el Libro correspondiente.",
+      "Relevarse con el turno siguiente, registrando las ocurrencias en su turno.",
+      "Custodiar la Institución a través de rondas permanentes.",
+      "Custodiar todos los bienes que se encuentren dentro de la Institución."
+    ],
+    "entregables": [
+      {
+        "nombre": "De Corresponder.",
+        "plazo_texto": null,
+        "plazo_dias": null
+      }
+    ],
+    "lugar": "Instalaciones del I.E.S.T.P. Luis E. Valcárcel, Pampa inalámbrica s/n Distrito Ilo, Provincia de Ilo, Departamento de Moquegua."
+  },
+  "payment": {
+    "tipo": "pago_unico",
+    "detalle": "La forma de pago será a crédito y se efectuará de manera única una vez culminado el servicio, conforme al objetivo para el que fue contratado, previa presentación de conformidad otorgada por el Área Usuaria.",
+    "plazo_pago_dias": null,
+    "armadas": []
+  },
+  "requirements": {
+    "provider": [
+      {
+        "tipo": "specific_experience",
+        "descripcion": "Acreditar experiencia en la prestación de servicios similares.",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": null
+      },
+      {
+        "tipo": "education",
+        "descripcion": "Estudios Secundarios concluidos.",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": null
+      },
+      {
+        "tipo": "ruc_status",
+        "descripcion": "Contar con Registro Único de Contribuyente (RUC) ACTIVO Y HABIDO",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": null
+      }
+    ],
+    "key_personnel": [],
+    "equipment": [],
+    "insurance": [],
+    "proposal_documents": []
+  },
+  "penalties": [
+    {
+      "tipo": "mora",
+      "descripcion": "En caso de retraso injustificado del contratista en la ejecución de las prestaciones objeto del contrato, la entidad contratante le aplica automáticamente una penalidad por mora por cada día de atraso que le sea imputable.",
+      "formula": "0.10 x monto / (F x plazo)",
+      "tope_pct": null,
+      "base_calculo": "monto"
+    }
+  ],
+  "contract_management": {
+    "conformidad": "El informe de conformidad será emitido por el Área Usuaria representada por el encargado de la Oficina de Unidad Administrativa, previa recepción y verificación del servicio.",
+    "confidencialidad": "EL CONTRATISTA declara y garantiza no haber ofrecido, negociado, prometido o efectuado ningún pago o entrega de cualquier beneficio o incentivo ilegal, de manera directa o indirecta, a los evaluadores del proceso de contratación o cualquier servidor de la entidad contratante. Asimismo, EL CONTRATISTA se obliga a mantener una conducta proba e íntegra durante la vigencia del contrato, y después de culminado el mismo en caso existan controversias pendientes de resolver, lo que supone actuar con probidad, sin cometer actos ilícitos, directa o indirectamente.",
+    "vicios_ocultos": null,
+    "resolucion_controversias": "Las controversias que surjan entre las partes durante la ejecución del contrato se resuelven mediante lo establecido en la Ley N° 32069, su reglamento y normatividad vigente, según el acuerdo de las partes. Cualquiera de las partes tiene derecho a iniciar el arbitraje a fin de resolver dichas controversias dentro del plazo de caducidad previsto en la Ley N° 32069, Ley General de Contrataciones Públicas, y su Reglamento, aprobado por Decreto Supremo N° 009-2025-EF"
+  },
+  "summary": {
+    "descripcion_corta": "Se requiere el servicio de seguridad y vigilancia para las instalaciones del IESTP. Luis E. Valcárcel. El servicio tiene una duración de nueve (09) días efectivos. El pago será único y se realizará a crédito una vez culminado el servicio y previa conformidad. Los requisitos incluyen experiencia similar, estudios secundarios concluidos y RUC activo y habido.",
+    "observaciones_clave": [
+      "Penalidad por mora diaria calculada como (0.10 x monto) / (F x plazo), donde F=0.40.",
+      "Plazo de ejecución muy corto: 9 días efectivos.",
+      "El servicio se presta en horario nocturno (21:00 pm a 05:00 am) incluyendo sábados, domingos y feriados.",
+      "Se exige cláusula anticorrupción y antisoborno estricta."
+    ]
+  }
+}

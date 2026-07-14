@@ -1,0 +1,26 @@
+.wrapper {
+  display: grid;
+  gap: var(--bp-space-2);
+}
+
+.tasks {
+  display: grid;
+  gap: var(--bp-space-2);
+  min-width: 260px;
+}
+
+.tasks button {
+  justify-content: flex-start;
+  white-space: normal;
+}
+
+.empty {
+  color: var(--bp-color-text-2);
+  font-size: 12px;
+}
+
+.form {
+  display: grid;
+  gap: var(--bp-space-2);
+  grid-template-columns: minmax(160px, 1fr) auto;
+}

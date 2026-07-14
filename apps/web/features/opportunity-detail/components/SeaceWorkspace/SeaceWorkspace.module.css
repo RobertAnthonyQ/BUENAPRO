@@ -1,0 +1,45 @@
+.workspace { border-bottom: 1px solid var(--bp-color-border); scroll-margin-top: 88px; }
+.header { align-items: center; display: flex; justify-content: space-between; padding: 22px 24px 14px; }
+.header span { color: var(--bp-color-sage); font-size: 10px; font-weight: 750; }
+.header h2 { font-size: 16px; line-height: 23px; }
+.header > button { background: transparent; border: 0; color: var(--bp-color-brand); cursor: pointer; font-weight: 700; }
+.tabs { border-bottom: 1px solid var(--bp-color-border); display: flex; gap: 4px; padding: 0 24px; }
+.tabs button { background: transparent; border: 0; border-bottom: 2px solid transparent; color: var(--bp-color-text-2); cursor: pointer; font: inherit; font-size: 13px; font-weight: 650; min-height: 44px; padding: 10px 12px; }
+.tabs button[aria-selected="true"] { border-bottom-color: var(--bp-color-brand); color: var(--bp-color-ink); }
+.invitation, .loading, .error, .empty { align-items: start; display: grid; gap: 7px; justify-items: start; padding: 24px; }
+.invitation p, .error span, .empty, .loading { color: var(--bp-color-text-2); font-size: 13px; }
+.error { background: var(--bp-color-danger-soft); }
+.consultations { display: grid; padding: 0 24px 24px; }
+.consultations article { border-bottom: 1px solid var(--bp-color-border); display: grid; gap: 7px; padding: 16px 0; }
+.consultations article > div { display: flex; gap: 12px; justify-content: space-between; }
+.consultations article span, .consultations time { color: var(--bp-color-text-3); font-size: 11px; font-weight: 650; }
+.consultations h3 { font-size: 13.5px; line-height: 20px; text-wrap: pretty; }
+.consultations details summary { color: var(--bp-color-brand); cursor: pointer; font-size: 12px; font-weight: 700; }
+.consultations details p { color: var(--bp-color-text-2); font-size: 13px; line-height: 20px; margin-top: 8px; }
+.pending { color: var(--bp-color-warning); font-size: 12px; }
+.quote { display: grid; gap: 20px; padding: 20px 24px 24px; }
+.readiness { align-items: center; background: var(--bp-color-subtle); display: flex; gap: 20px; justify-content: space-between; padding: 14px 16px; }
+.readiness > div { display: grid; gap: 2px; }
+.readiness span { color: var(--bp-color-text-3); font-size: 10px; font-weight: 650; }
+.readiness strong { font-size: 14px; }
+.readiness p { color: var(--bp-color-text-2); font-size: 11px; max-width: 48ch; }
+.fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0; }
+.fields > div { border-bottom: 1px solid var(--bp-color-border); display: grid; gap: 2px; padding: 9px 0; }
+.fields > div:nth-child(odd) { padding-right: 18px; }
+.fields dt { color: var(--bp-color-text-3); font-size: 10px; text-transform: capitalize; }
+.fields dd { font-size: 12.5px; margin: 0; overflow-wrap: anywhere; }
+.quoteDocs { display: grid; gap: 8px; }
+.quoteDocs h3 { font-size: 13px; }
+.quoteDocs > div { align-items: center; border-top: 1px solid var(--bp-color-border); display: flex; gap: 12px; justify-content: space-between; padding: 10px 0 2px; }
+.quoteDocs > div > div { display: grid; min-width: 0; }
+.quoteDocs strong { font-size: 12.5px; overflow-wrap: anywhere; }
+.quoteDocs span, .quoteDocs p { color: var(--bp-color-text-2); font-size: 11px; }
+.quoteDocs a { color: var(--bp-color-brand); flex: none; font-size: 12px; font-weight: 700; }
+.tabs button:focus-visible, .header > button:focus-visible, .quoteDocs a:focus-visible, .consultations summary:focus-visible { outline: 2px solid var(--bp-color-brand); outline-offset: 2px; }
+@media (max-width: 640px) {
+  .header, .invitation, .loading, .error, .empty, .quote { padding-left: 16px; padding-right: 16px; }
+  .tabs, .consultations { padding-left: 16px; padding-right: 16px; }
+  .readiness { align-items: flex-start; flex-direction: column; }
+  .fields { grid-template-columns: 1fr; }
+  .fields > div:nth-child(odd) { padding-right: 0; }
+}

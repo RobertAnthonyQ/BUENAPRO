@@ -1,0 +1,119 @@
+{
+  "contract": {
+    "objeto": "Servicio de mantenimiento correctivo de tablero eléctrico de control",
+    "entidad": "UNIVERSIDAD NACIONAL AGRARIA LA MOLINA",
+    "area_usuaria": "DIRECCIÓN DE EXTENSIÓN CULTURAL Y PROYECCIÓN SOCIAL",
+    "lugar_ejecucion": "AUDITORIO A5 DE LA DECPS - Universidad Nacional Agraria La Molina",
+    "plazo_dias": 15,
+    "plazo_texto": "veinte (15) días calendarios",
+    "valor_estimado_monto": null,
+    "moneda": "PEN",
+    "modalidad": "Contratos Menores",
+    "condicion_inicio": "a partir del día siguiente de la notificación de la orden del servicio"
+  },
+  "execution": {
+    "actividades": [
+      "Desinstalación de luminarias y accesorios eléctricos existentes en el Auditorio A5.",
+      "Instalación de tablero eléctrico trifásico empotrable de 38 polos con mandil abisagrado, llave de fuerza, llaves termomagnéticas y llaves diferenciales.",
+      "Tendido e instalación de conductores eléctricos NH-90 para circuitos de iluminación, tomacorrientes y puesta a tierra.",
+      "Instalación de circuitos de iluminación y tomacorrientes con linea de puesta a tierra.",
+      "Instalación de veintiséis (26) paneles LED de 48 W.",
+      "Instalación de tres (3) luminarias LED empotrables de 18 W.",
+      "Instalación de cinco (5) luminarias LED dirigibles.",
+      "Instalación de dos (2) equipos herméticos para fluorescentes LED, incluyendo lámparas LED.",
+      "Instalación de ocho (8) luces de emergencia.",
+      "Instalación de diez (10) tomacorrientes universales con puesta a tierra.",
+      "Instalación de un (1) interruptor doble empotrable.",
+      "Instalación de seis (6) contactores de 9 A.",
+      "Instalación de doce (12) botones pulsadores luminosos.",
+      "Instalación de treinta (30) metros de cable Ethernet CAT 8 FTP.",
+      "Elaboración y entrega de diagrama unifilar y leyenda de circuitos del tablero eléctrico instalado.",
+      "Realización de pruebas de funcionamiento de los circuitos eléctricos, luminarias, tomacorrientes, alumbrado de emergencia y tablero eléctrico.",
+      "Limpieza y retiro de materiales excedentes, residuos y desmontes generados durante la ejecución del servicio.",
+      "El servicio se ejecutará bajo la modalidad de todo costo, comprendiendo el suministro de materiales, equipos, accesorios, herramientas, mano de obra, transporte, instalación, pruebas, puesta en funcionamiento y cualquier otro elemento necesario para la correcta ejecución de las actividades descritas, sin generar costos adicionales para la entidad."
+    ],
+    "entregables": [
+      {
+        "nombre": "Informe técnico de los trabajos realizados antes y después con imágenes",
+        "plazo_texto": "Hasta 15 dias calendario desde la notificación",
+        "plazo_dias": 15
+      }
+    ],
+    "lugar": "AUDITORIO A5 DE LA DECPS - Universidad Nacional Agraria La Molina"
+  },
+  "payment": {
+    "tipo": "pago_unico",
+    "detalle": "El pago se realizará en un (01) único desembolso, previa conformidad del servicio, mediante abono en la cuenta interbancaria (CCI) brindad por el proveedor.",
+    "plazo_pago_dias": null,
+    "armadas": [
+      {
+        "numero": 1,
+        "porcentaje": 100.0,
+        "condicion": "Presentación y aprobación del Informe"
+      }
+    ]
+  },
+  "requirements": {
+    "provider": [
+      {
+        "tipo": "rnp",
+        "descripcion": "Contar con Registro Nacional de Proveedores vigente.",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": null
+      },
+      {
+        "tipo": "ruc_status",
+        "descripcion": "Contar con RUC activo y habido.",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": null
+      },
+      {
+        "tipo": "not_disqualified",
+        "descripcion": "No estar impedido para contratar con el Estado.",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": null
+      },
+      {
+        "tipo": "economic_experience",
+        "descripcion": "Acreditar experiencia con un monto igual o mayor a su cotización en servicios similares",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": "monto igual o mayor a su cotización"
+      }
+    ],
+    "key_personnel": [],
+    "equipment": [],
+    "insurance": [],
+    "proposal_documents": [
+      "Presentación y aprobación del Informe"
+    ]
+  },
+  "penalties": [
+    {
+      "tipo": "mora",
+      "descripcion": "En caso de retraso injustificado del contratista en la ejecución de las prestaciones objeto de la contratación, la UNALM le aplica automáticamente una penalidad por mora por cada día de atraso que le sea imputable.",
+      "formula": "0.10 x monto Penalidad / F x plazo en días",
+      "tope_pct": 10.0,
+      "base_calculo": "monto del entregable correspondiente"
+    }
+  ],
+  "contract_management": {
+    "conformidad": "La conformidad de la prestación será otorgada expresamente por la jefatura de la Dirección de Extensión Cultural y Proyección Social de la Universidad Nacional Agraria La Molina.",
+    "confidencialidad": "EL CONTRATISTA se compromete a mantener en reserva y a no revelar a terceros, sin previa autorización escrita de la UNALM, toda información que le sea suministrada por ésta última y/o sea obtenida en el ejercicio de las actividades a desarrollarse o conozca directa o indirectamente durante el proceso de selección o para la realización de sus tareas, excepto en cuanto resultare estrictamente necesario para el cumplimiento del Contrato. EL CONTRATISTA deberá mantener a perpetuidad la confidencialidad y reserva absoluta en el manejo de cualquier información y documentación a la que se tenga acceso a consecuencia del procedimiento de selección y la ejecución del contrato, quedando prohibida revelar a terceros. Dicha obligación comprende la información que se entrega, como también la que se genera durante la realización de las actividades previas a la ejecución del contrato, durante su ejecución y la producida una vez que se haya concluido el contrato. Dicha información puede consistir en informes, recomendaciones, cálculos, documentos y demás datos compilados o recibidos por EL CONTRATISTA. Asimismo, aun cuando sea de indole pública, la información vinculada al procedimiento de contratación, incluyendo su ejecución y conclusión, no podrá ser utilizada por EL CONTRATISTA para fines publicitarios o de difusión por cualquier medio sin obtener la autorización correspondiente de LA UNALM.",
+    "vicios_ocultos": "El proveedor es el responsable por la calidad ofrecida y por los vicios ocultos del servicio ofertado por un plazo no menor de un (01) año, contado a partir de la conformidad otorgada por la Entidad.",
+    "resolucion_controversias": "Todas las controversias que surjan entre las partes sobre la validez, nulidad, interpretación, ejecución, terminación o eficacia de los contratos menores se resuelven mediante conciliación, conforme lo dispuesto en el artículo 81 de la Ley General de Contrataciones Públicas."
+  },
+  "summary": {
+    "descripcion_corta": "Se contrata el servicio de mantenimiento correctivo de tablero eléctrico de control para la Universidad Nacional Agraria La Molina. El servicio tiene un plazo de 15 días calendario y se pagará en un solo desembolso previa conformidad. El proveedor debe contar con RNP vigente, RUC activo y habido, no estar impedido para contratar con el Estado y acreditar experiencia similar a su cotización.",
+    "observaciones_clave": [
+      "Plazo de ejecución de 15 días calendario.",
+      "Penalidad por mora del 0.10% diario, con un tope del 10% del monto del entregable.",
+      "El servicio se ejecutará bajo la modalidad de 'todo costo'.",
+      "El proveedor debe presentar un informe técnico antes y después del servicio con imágenes.",
+      "La conformidad la otorga la jefatura de la Dirección de Extensión Cultural y Proyección Social."
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+.form {
+  display: grid;
+  gap: var(--bp-space-2);
+  min-width: 280px;
+}
+
+.form span {
+  color: var(--bp-color-text-2);
+  font-size: 12px;
+}

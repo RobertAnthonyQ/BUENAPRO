@@ -1,0 +1,27 @@
+[
+  {
+    "name": "77877_305355_T_RMINOS DE REFERENCIA 680",
+    "pdf": "files/77877_305355_T_RMINOS DE REFERENCIA 680.pdf",
+    "expected": "expected/77877_305355_T_RMINOS DE REFERENCIA 680.json"
+  },
+  {
+    "name": "77965_305794_PEDIDO S. 529",
+    "pdf": "files/77965_305794_PEDIDO S. 529.pdf",
+    "expected": "expected/77965_305794_PEDIDO S. 529.json"
+  },
+  {
+    "name": "77967_305820_1342",
+    "pdf": "files/77967_305820_1342.pdf",
+    "expected": "expected/77967_305820_1342.json"
+  },
+  {
+    "name": "77977_305786_1496",
+    "pdf": "files/77977_305786_1496.pdf",
+    "expected": "expected/77977_305786_1496.json"
+  },
+  {
+    "name": "77998_305877_PED SER N_0588",
+    "pdf": "files/77998_305877_PED SER N_0588.pdf",
+    "expected": "expected/77998_305877_PED SER N_0588.json"
+  }
+]

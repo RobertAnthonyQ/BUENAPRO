@@ -1,0 +1,101 @@
+.rail {
+  position: sticky;
+  top: 88px;
+  align-self: start;
+  background: #fff;
+  border: 1px solid #e7e5e4;
+  border-radius: 8px;
+  padding: 20px;
+}
+.heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: start;
+}
+.heading strong,
+.heading span {
+  display: block;
+}
+.heading strong {
+  font-size: 20px;
+  color: #1f2328;
+}
+.heading > div span,
+.saved {
+  font-size: 12px;
+  color: #6b7280;
+}
+.saved {
+  text-align: right;
+}
+.bar {
+  height: 5px;
+  background: #e7e5e4;
+  margin: 18px 0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.bar span {
+  display: block;
+  height: 100%;
+  background: #5b8c7a;
+  transition: width 0.2s ease;
+}
+.rail ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.rail li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 42px;
+  border-bottom: 1px solid #f0efed;
+  color: #4b5563;
+  font-size: 14px;
+}
+.rail li span {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #d6d3d1;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+}
+.rail li[data-done="true"] {
+  color: #1f2328;
+  font-weight: 600;
+}
+.rail li[data-done="true"] span {
+  background: #eef6f2;
+  border-color: #5b8c7a;
+  color: #356656;
+}
+.notice {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid #d6d3d1;
+}
+.notice strong {
+  font-size: 13px;
+}
+.notice p {
+  font-size: 12px;
+  line-height: 1.55;
+  color: #6b7280;
+  margin: 6px 0 0;
+}
+@media (max-width: 960px) {
+  .rail {
+    position: static;
+    order: -1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bar span {
+    transition: none;
+  }
+}

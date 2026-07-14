@@ -1,0 +1,19 @@
+.events {
+  display: grid;
+  gap: var(--bp-space-2);
+  list-style: none;
+  padding: 0;
+}
+
+.events li {
+  border-left: 2px solid var(--bp-color-border-strong);
+  display: grid;
+  gap: 2px;
+  padding-left: var(--bp-space-2);
+}
+
+.events span,
+.empty {
+  color: var(--bp-color-text-2);
+  font-size: 12px;
+}

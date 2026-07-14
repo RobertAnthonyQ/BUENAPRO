@@ -1,0 +1,10 @@
+.dialog {
+  background: var(--bp-color-panel);
+  border: 1px solid var(--bp-color-border);
+  border-radius: var(--bp-radius-lg);
+  box-shadow: var(--bp-shadow-popover);
+  display: grid;
+  gap: var(--bp-space-3);
+  max-width: 460px;
+  padding: var(--bp-space-5);
+}

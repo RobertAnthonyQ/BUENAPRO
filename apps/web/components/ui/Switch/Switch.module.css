@@ -1,0 +1,11 @@
+.label {
+  align-items: center;
+  display: inline-flex;
+  gap: var(--bp-space-2);
+}
+
+.label input {
+  accent-color: var(--bp-color-brand);
+  height: 18px;
+  width: 34px;
+}

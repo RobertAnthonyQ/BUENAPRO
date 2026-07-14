@@ -1,0 +1,227 @@
+{
+  "contract": {
+    "objeto": "Servicio de Ingeniero Mecánico-Eléctrico para la implementación del Plan de Mantenimiento de equipos electromecánicos de los Sistemas Regulados por la Sub Gerencia de Operación y Mantenimiento.",
+    "entidad": "AUTORIDAD AUTÓNOMA DE MAJES",
+    "area_usuaria": "SUB GERENCIA DE OPERACIÓN Y MANTENIMIENTO",
+    "lugar_ejecucion": "Urb. La Marina E-8 Sede Cayma, Arequipa, Arequipa, Caima. Además de los sectores del ámbito del Proyecto Especial Integral Majes Siguas - AUTODEMA",
+    "plazo_dias": 90,
+    "plazo_texto": "noventa (90) días calendarios",
+    "valor_estimado_monto": null,
+    "moneda": "PEN",
+    "modalidad": null,
+    "condicion_inicio": "al día siguiente de la notificación de la orden de servicio"
+  },
+  "execution": {
+    "actividades": [
+      "Apoyo en el cumplimiento y ejecución de cronogramas de mantenimiento semestral y anual.",
+      "Ejecutar, controlar y hacer seguimiento al plan de mantenimiento.",
+      "Controlar y registrar insumos o repuestos electromecánicos.",
+      "Apoyo en la programación del plan de Mantenimiento anual.",
+      "Apoyo en la redacción de informes, términos de referencia y especificaciones técnicas.",
+      "Apoyo en la evaluación de la vida útil del equipamiento electromecánico.",
+      "Realizar informes de actividades realizadas en el área de Mantenimiento Electromecánico."
+    ],
+    "entregables": [
+      {
+        "nombre": "Primer Entregable",
+        "plazo_texto": "30 DÍAS CALENDARIO",
+        "plazo_dias": 30
+      },
+      {
+        "nombre": "Segundo Entregable",
+        "plazo_texto": "60 DÍAS CALENDARIO",
+        "plazo_dias": 60
+      },
+      {
+        "nombre": "Tercer Entregable",
+        "plazo_texto": "90 DÍAS CALENDARIO",
+        "plazo_dias": 90
+      }
+    ],
+    "lugar": null
+  },
+  "payment": {
+    "tipo": "por_entregable",
+    "detalle": "Para el pago del servicio, se presentará por mesa de partes el Informe de Actividades realizadas y en el periodo señalado según cronograma, mediante un entregable el cual presentará (02) ejemplares en original debidamente foliado y firmado cada hoja. Además, deberá adjuntar: Copia de Orden de Servicio, Suspensión de 4ta Categoría, Recibo por Honorarios.",
+    "plazo_pago_dias": null,
+    "armadas": [
+      {
+        "numero": 1,
+        "porcentaje": 33.33,
+        "condicion": "Primer Entregable"
+      },
+      {
+        "numero": 2,
+        "porcentaje": 33.33,
+        "condicion": "Segundo Entregable"
+      },
+      {
+        "numero": 3,
+        "porcentaje": 33.34,
+        "condicion": "Tercer Entregable"
+      }
+    ]
+  },
+  "requirements": {
+    "provider": [
+      {
+        "tipo": "legal_capacity",
+        "descripcion": "Persona natural.",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": null
+      },
+      {
+        "tipo": "rnp",
+        "descripcion": "Contar con RNP Vigente y no estar inhabilitado para contratar con el estado.",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": null
+      },
+      {
+        "tipo": "ruc_status",
+        "descripcion": "Tener RUC activo y habido ante SUNAT.",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": null
+      },
+      {
+        "tipo": "other",
+        "descripcion": "Condiciones para residir en condiciones de altura en ámbitos del proyecto a hasta 4,550 msnm.",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": null
+      },
+      {
+        "tipo": "economic_experience",
+        "descripcion": "Experiencia general mínima de 03 años.",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": null
+      },
+      {
+        "tipo": "specific_experience",
+        "descripcion": "Experiencia especifica de 01 año en el sector público.",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": null
+      },
+      {
+        "tipo": "specific_experience",
+        "descripcion": "Experiencia en gestión de mantenimiento de equipos industriales y flota vehicular.",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": null
+      },
+      {
+        "tipo": "specific_experience",
+        "descripcion": "Experiencia en supervisión mecánica para el sector industrial.",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": null
+      },
+      {
+        "tipo": "training",
+        "descripcion": "Conocimiento en Microsoft Office (Word, Excel, Power Point).",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": null
+      },
+      {
+        "tipo": "training",
+        "descripcion": "Conocimiento en MS Project.",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": null
+      },
+      {
+        "tipo": "training",
+        "descripcion": "Conocimiento en Power BI.",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": null
+      },
+      {
+        "tipo": "other",
+        "descripcion": "Copia del Título, certificado o constancia del grado académico según lo solicitado.",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": null
+      },
+      {
+        "tipo": "other",
+        "descripcion": "Copia de certificados o constancias de trabajo, ordenes de servicio y otros.",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": null
+      },
+      {
+        "tipo": "other",
+        "descripcion": "Constancias, certificados y/o diplomas en caso corresponda.",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": null
+      }
+    ],
+    "key_personnel": [
+      {
+        "rol": "Ingeniero Mecánico-Eléctrico",
+        "formacion": [
+          "Ingeniería Mecánica, Eléctrica, Mecánico- Eléctrica y/o afines."
+        ],
+        "colegiatura_requerida": true,
+        "experiencia": null,
+        "experiencia_anios": null,
+        "capacitaciones": []
+      }
+    ],
+    "equipment": [],
+    "insurance": [
+      {
+        "tipo": "SCTR",
+        "descripcion": "Seguro SCTR, el responsable del servicio debe presentar luego de la firma de la orden de Servicio",
+        "obligatorio": true
+      }
+    ],
+    "proposal_documents": [
+      "Copia del Título, certificado o constancia del grado académico según lo solicitado.",
+      "Copia de certificados o constancias de trabajo, ordenes de servicio y otros.",
+      "Constancias, certificados y/o diplomas en caso corresponda.",
+      "Registro Nacional de Proveedores (RNP)",
+      "Copia certificado SCTR",
+      "Copia de los términos de referencia"
+    ]
+  },
+  "penalties": [
+    {
+      "tipo": "mora",
+      "descripcion": "Retraso injustificado en el inicio del servicio.",
+      "formula": "0.10 x monto / (F x plazo en dias)",
+      "tope_pct": 10,
+      "base_calculo": "monto mensual de la prestación correspondiente al item adjudicado"
+    },
+    {
+      "tipo": "mora",
+      "descripcion": "No cumplir con presentar el SCTR vigente dentro del plazo de 05 días calendarios, contados a partir de la notificación de la orden de servicio.",
+      "formula": null,
+      "tope_pct": 5,
+      "base_calculo": "monto del primer entregable"
+    }
+  ],
+  "contract_management": {
+    "conformidad": "La conformidad del servicio será otorgada por la Sub- Gerencia de Operación y Mantenimiento dentro de un plazo máximo de siete (07) días de producida la recepción, según lo dispuesto en el artículo 168° del Reglamento de la Ley de Contrataciones del Estado.",
+    "confidencialidad": null,
+    "vicios_ocultos": "La responsabilidad del PROVEEDOR del Servicio por la calidad ofrecida y por los vicios ocultos de los servicios ofertados será de 01 año contado a partir de la conformidad otorgada.",
+    "resolucion_controversias": "Dentro de la vigencia del plazo contractual, AUTODEMA podrá resolver unilateralmente el contrato cuando considere que se haya cumplido con el objetivo de la contratación, previa comunicación por parte del área usuaria. El contrato quedará resuelto con la comunicación por escrito del PEMS-AUTODEMA."
+  },
+  "summary": {
+    "descripcion_corta": "Se contrata un servicio de Ingeniero Mecánico-Eléctrico para la implementación del Plan de Mantenimiento de equipos electromecánicos del Sistema Chili Regulado. La entidad convocante es la AUTORIDAD AUTÓNOMA DE MAJES. El servicio tiene un plazo de 90 días calendarios y se pagará por entregables. Se requiere que el proveedor cuente con RNP vigente, RUC activo, colegiatura y experiencia específica en el sector público y en gestión de mantenimiento.",
+    "observaciones_clave": [
+      "Penalidad por mora calculada sobre el monto mensual de la prestación o monto del primer entregable.",
+      "Penalidad del 5% sobre el monto del primer entregable si no se presenta el SCTR vigente en 5 días.",
+      "El plazo de ejecución es de 90 días calendarios.",
+      "Se requiere colegiatura y habilitación para el Ingeniero Mecánico-Eléctrico.",
+      "El pago se realiza por entregables, con porcentajes definidos para cada uno."
+    ]
+  }
+}

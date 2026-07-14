@@ -1,0 +1,115 @@
+{
+  "contract": {
+    "objeto": "Servicio de mantenimiento preventivo y correctivo de 02 bicicletas para la Dirección de Gestión de Investigación del Vicerrectorado de Investigación.",
+    "entidad": "UNIVERSIDAD NACIONAL AGRARIA LA MOLINA",
+    "area_usuaria": "VICE - RECTORADO DE INVESTIGACIÓN",
+    "lugar_ejecucion": "Ciudad Lima, en la Dirección de Gestión de Investigación-Vicerrectorado de Investigación de la Universidad Nacional Agraria La Molina.",
+    "plazo_dias": 5,
+    "plazo_texto": "hasta 05 (cinco) días calendario",
+    "valor_estimado_monto": null,
+    "moneda": "PEN",
+    "modalidad": "Contratos Menores",
+    "condicion_inicio": "desde el día siguiente de la notificación de la orden de servicio"
+  },
+  "execution": {
+    "actividades": [
+      "Mantenimiento y limpieza general (piñones, catalinas, otros)",
+      "Lubricación de la cadena",
+      "Revisión y calibración de frenos y timón",
+      "Inspección de neumáticos y aros.",
+      "Revisión de tornillos y ajustes (sistemas de cambios, cadena, incluir soporte canastilla, otros)",
+      "Prueba final de funcionamiento"
+    ],
+    "entregables": [
+      {
+        "nombre": "Informe técnico de mantenimiento preventivo y correctivo de las 02 bicicletas y Garantía por un periodo de 06 meses.",
+        "plazo_texto": "hasta los 05 días calendarios, a partir del día siguiente de la notificación de la orden de servicio",
+        "plazo_dias": 5
+      }
+    ],
+    "lugar": "Ciudad Lima, en la Dirección de Gestión de Investigación-Vicerrectorado de Investigación de la Universidad Nacional Agraria La Molina."
+  },
+  "payment": {
+    "tipo": "pago_unico",
+    "detalle": "El pago se realizará previa conformidad, mediante abono a cuenta interbancaria. El pago se realizará de acuerdo con lo dispuesto en el artículo 67 de la Ley General de Contrataciones Públicas.",
+    "plazo_pago_dias": null,
+    "armadas": []
+  },
+  "requirements": {
+    "provider": [
+      {
+        "tipo": "rnp",
+        "descripcion": "Contar con Registro Nacional de Proveedores vigente.",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": null
+      },
+      {
+        "tipo": "ruc_status",
+        "descripcion": "Contar con RUC activo y habido.",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": null
+      },
+      {
+        "tipo": "not_disqualified",
+        "descripcion": "No estar impedido para contratar con el Estado.",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": null
+      },
+      {
+        "tipo": "business_line",
+        "descripcion": "Pertenecer al rubro objeto de la contratación.",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": null
+      },
+      {
+        "tipo": "cci",
+        "descripcion": "CCI Vinculado al RUC.",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": null
+      },
+      {
+        "tipo": "economic_experience",
+        "descripcion": "Acreditar un monto facturado acumulado equivalente a S/ 1,000.00 (Un mil con 00/100 soles), por mantenimiento de bienes iguales o similares al objeto de la contratación, durante los diez (5) años anteriores a la fecha de la presentación de ofertas.",
+        "obligatorio": true,
+        "monto": 1000.0,
+        "evidencia": null
+      }
+    ],
+    "key_personnel": [],
+    "equipment": [],
+    "insurance": [],
+    "proposal_documents": [
+      "Informe técnico de mantenimiento preventivo y correctivo de las 02 bicicletas.",
+      "Garantía por un periodo de 06 meses contados a partir de la emisión de la conformidad del servicio."
+    ]
+  },
+  "penalties": [
+    {
+      "tipo": "mora",
+      "descripcion": "En caso de retraso injustificado del contratista en la ejecución de las prestaciones objeto de la contratación, la UNALM le aplica automáticamente una penalidad por mora por cada día de atraso que le sea imputable.",
+      "formula": "0.10 x monto / (F x plazo en días)",
+      "tope_pct": 10.0,
+      "base_calculo": "monto del entregable correspondiente"
+    }
+  ],
+  "contract_management": {
+    "conformidad": "La recepción y conformidad se realiza de acuerdo con lo dispuesto en el artículo 144 del Reglamento de la Ley General de Contrataciones Públicas.",
+    "confidencialidad": "El contratista se compromete a mantener en reserva y a no revelar a terceros, sin previa autorización escrita de la UNALM, toda información que le sea suministrada por ésta última y/o sea obtenida en el ejercicio de las actividades a desarrollarse o conozca directa o indirectamente durante el proceso de selección o para la realización de sus tareas, excepto en cuanto resultare estrictamente necesario para el cumplimiento del Contrato. Deberá mantener a perpetuidad la confidencialidad y reserva absoluta en el manejo de cualquier información y documentación a la que se tenga acceso a consecuencia del procedimiento de selección y la ejecución del contrato, quedando prohibida revelarla a terceros.",
+    "vicios_ocultos": "No aplica",
+    "resolucion_controversias": "Todas las controversias que surjan entre las partes sobre la validez, nulidad, interpretación, ejecución, terminación o eficacia de los contratos menores se resuelven mediante conciliación, conforme lo dispuesto en el artículo 81 de la Ley General de Contrataciones Públicas."
+  },
+  "summary": {
+    "descripcion_corta": "Se contrata el servicio de mantenimiento preventivo y correctivo de 02 bicicletas para la Dirección de Gestión de Investigación de la Universidad Nacional Agraria La Molina. El plazo de ejecución es de 5 días calendario, con un pago único previa conformidad. Se requiere que el proveedor cuente con RNP vigente, RUC activo, no estar impedido, pertenecer al rubro y tener un CCI vinculado. Adicionalmente, se exige una experiencia mínima de S/ 1,000.00 en servicios similares.",
+    "observaciones_clave": [
+      "Penalidad por mora del 0.10 por día de atraso, con un tope máximo del 10% del monto del entregable.",
+      "El plazo de ejecución es muy corto (5 días calendario).",
+      "Se requiere informe técnico y garantía de 6 meses como entregable.",
+      "La conformidad se realiza según el artículo 144 del Reglamento de la Ley General de Contrataciones Públicas."
+    ]
+  }
+}

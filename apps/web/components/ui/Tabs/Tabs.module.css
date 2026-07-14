@@ -1,0 +1,20 @@
+.tabs {
+  align-items: center;
+  border-bottom: 1px solid var(--bp-color-border);
+  display: flex;
+  gap: var(--bp-space-2);
+  overflow-x: auto;
+}
+
+.tabs a {
+  border-bottom: 2px solid transparent;
+  color: var(--bp-color-text-2);
+  font-weight: 650;
+  padding: 12px 10px 10px;
+  white-space: nowrap;
+}
+
+.tabs .active {
+  border-color: var(--bp-color-brand);
+  color: var(--bp-color-brand);
+}

@@ -1,0 +1,13 @@
+.label {
+  align-items: center;
+  color: var(--bp-color-text);
+  display: inline-flex;
+  gap: var(--bp-space-2);
+  font-weight: 600;
+}
+
+.label input {
+  accent-color: var(--bp-color-brand);
+  height: 16px;
+  width: 16px;
+}

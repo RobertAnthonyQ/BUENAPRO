@@ -1,0 +1,75 @@
+.header {
+  margin-bottom: var(--bp-space-5);
+}
+
+.header p {
+  color: var(--bp-color-brand);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.header h1 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.header span,
+.status {
+  color: var(--bp-color-text-2);
+}
+
+.panel {
+  background: var(--bp-color-panel);
+  border: 1px solid var(--bp-color-border);
+  border-radius: var(--bp-radius-lg);
+  display: grid;
+  gap: var(--bp-space-3);
+  margin-bottom: var(--bp-space-4);
+  padding: var(--bp-space-4);
+}
+
+.toolbar {
+  display: grid;
+  gap: var(--bp-space-3);
+  grid-template-columns: minmax(220px, 1fr) 220px auto auto;
+}
+
+.metrics {
+  display: grid;
+  gap: var(--bp-space-3);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  margin-bottom: var(--bp-space-4);
+}
+
+.metric {
+  background: var(--bp-color-panel);
+  border: 1px solid var(--bp-color-border);
+  border-radius: var(--bp-radius-lg);
+  display: grid;
+  gap: var(--bp-space-1);
+  padding: var(--bp-space-3);
+}
+
+.metric span {
+  color: var(--bp-color-text-2);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.metric strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.actions {
+  display: flex;
+  gap: var(--bp-space-2);
+}
+
+@media (max-width: 1000px) {
+  .toolbar,
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+}

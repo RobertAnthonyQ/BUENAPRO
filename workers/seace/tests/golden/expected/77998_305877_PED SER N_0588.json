@@ -1,0 +1,158 @@
+{
+  "contract": {
+    "objeto": "Servicio de Elaboración de la liquidación Físico - Financiero de obra",
+    "entidad": "MUNICIPALIDAD DISTRITAL DE CHILCA",
+    "area_usuaria": "ÁREA DE LIQUIDACIÓN DE OBRAS",
+    "lugar_ejecucion": "Municipalidad Distrital de Chilca",
+    "plazo_dias": 30,
+    "plazo_texto": "hasta 30 días calendarios",
+    "valor_estimado_monto": null,
+    "moneda": "PEN",
+    "modalidad": null,
+    "condicion_inicio": "a partir del día siguiente de notificada la orden de servicio"
+  },
+  "execution": {
+    "actividades": [
+      "Elaboración de la liquidación técnico y financiera de obra."
+    ],
+    "entregables": [
+      {
+        "nombre": "Expediente de liquidación",
+        "plazo_texto": "una vez concluido el servicio hasta los 30 días",
+        "plazo_dias": 30
+      }
+    ],
+    "lugar": "Área de Liquidaciones de Obras de la Gerencia de Infraestructura de la Municipalidad Distrital de Chilca."
+  },
+  "payment": {
+    "tipo": "pago_unico",
+    "detalle": "La Municipalidad Distrital de Chilca, cancelará el 100% culminado el servicio debiendo de contar con la conformidad del servicio por el Área de liquidaciones de Obras y Gerencia de Infraestructura de la MDCH. Adicionalmente para efectuar el pago se adjuntará lo siguientes documentos que serán revisados: Conformidad de servicio emitida por el área usuaria, Resolución de aprobación de Liquidación de Obra, El Profesional emitirá Recibo por Honorarios o Factura.",
+    "plazo_pago_dias": 10,
+    "armadas": []
+  },
+  "requirements": {
+    "provider": [
+      {
+        "tipo": "rnp",
+        "descripcion": "Contar y presentar copia de RNP.",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": null
+      },
+      {
+        "tipo": "ruc_status",
+        "descripcion": "Contar y presentar copia de ficha RUC activo y habido",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": null
+      },
+      {
+        "tipo": "not_disqualified",
+        "descripcion": "No contar con impedimento para contratar con el estado, según art. 30° de la Ley General de Contrataciones Públicas.",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": null
+      },
+      {
+        "tipo": "business_line",
+        "descripcion": "El giro de actividad económica debe ser de acuerdo al objeto de contratación",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": null
+      },
+      {
+        "tipo": "economic_experience",
+        "descripcion": "Haber realizado (02) dos liquidaciones de obra en pavimento y/o pluvial, contar como mínimo 03 años de experiencia general en el sector público o privado.",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": "copias simple de contratos u ordenes de servicio y su respectiva conformidad o constancia de prestación del servicio, Resolución de aprobación de Liquidación de obra."
+      },
+      {
+        "tipo": "specific_experience",
+        "descripcion": "Haber realizado 02 liquidaciones de obras en pavimento y/o pluvial.",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": null
+      },
+      {
+        "tipo": "general_experience",
+        "descripcion": "Contar como mínimo 03 años de experiencia general en el sector público o privado.",
+        "obligatorio": true,
+        "monto": null,
+        "evidencia": null
+      }
+    ],
+    "key_personnel": [
+      {
+        "rol": "Ingeniero Civil",
+        "formacion": [
+          "Profesional titulado en ingeniería civil, acreditado con copia simple de título profesional, colegiado y habilitado."
+        ],
+        "colegiatura_requerida": true,
+        "experiencia": "Experiencia general no menor a 03 años en el sector público y/o privado. Haber realizado 02 liquidaciones de obras en pavimento y/o pluvial.",
+        "experiencia_anios": 3,
+        "capacitaciones": [
+          "Capacitación en Residencia, Supervisión, seguridad y salud ocupacional en Obras Publicas.",
+          "Capacitación en Valorización y/o Liquidación de Obras."
+        ]
+      },
+      {
+        "rol": "Contador Público",
+        "formacion": [
+          "Profesional titulado en Contabilidad, acreditado con copia simple de título profesional, colegiado y habilitado."
+        ],
+        "colegiatura_requerida": true,
+        "experiencia": "Experiencia general no menor a 02 años en el sector público y/o privado Haber realizado 01 liquidación de obra.",
+        "experiencia_anios": 2,
+        "capacitaciones": [
+          "Capacitación en SIAF y/o Ley de Contrataciones del estado.",
+          "Capacitación en Valorización y/o Liquidación de Obras."
+        ]
+      }
+    ],
+    "equipment": [],
+    "insurance": [],
+    "proposal_documents": [
+      "Copia de RNP.",
+      "Copia de ficha RUC activo y habido.",
+      "Declaración Jurada de no contar con impedimento para contratar con el estado.",
+      "Copia simple de contratos u ordenes de servicio y su respectiva conformidad o constancia de prestación del servicio, Resolución de aprobación de Liquidación de obra (para acreditar experiencia).",
+      "Copia simple de título profesional, colegiado y habilitado de Ingeniero Civil.",
+      "Copia simple de título profesional, colegiado y habilitado de Contador Público.",
+      "Certificados de Capacitación para Ingeniero Civil.",
+      "Certificados de Capacitación para Contador Público."
+    ]
+  },
+  "penalties": [
+    {
+      "tipo": "mora",
+      "descripcion": "Penalidad por cada día de retaso, hasta por un monto máximo equivalente al diez por ciento (10%) del monto de la contratación o ítem que debió ejecutarse.",
+      "formula": "10% del monto de la contratación o ítem que debió ejecutarse",
+      "tope_pct": 10,
+      "base_calculo": "monto de la contratación o ítem que debió ejecutarse"
+    },
+    {
+      "tipo": "otra",
+      "descripcion": "Se aplicará al contratista la penalidad establecida en el numeral 8.7.5 de la Directiva N° 001-2025-SGA/GA-MDCH. Las penalidades se computan desde el primer día de atraso (entrega o ejecución de la prestación), hasta el día en que se cumpla completamente la prestación a satisfacción del área usuaria.",
+      "formula": null,
+      "tope_pct": null,
+      "base_calculo": null
+    }
+  ],
+  "contract_management": {
+    "conformidad": "El Responsable del área de liquidaciones de obras de la Gerencia de Infraestructura, dentro del plazo máximo de cinco (05) días calendario posteriores a la Aprobación mediante Acto Resolutivo del expediente de liquidación de obra.",
+    "confidencialidad": "El consultor se compromete a guardar reserva de la información privilegiada que conociera en el ejercicio de sus funciones, tareas y demás actividades como parte de la ejecución de la prestación, no revelando en forma escrita, ni por cualquier otro medio, hechos, datos, procedimientos, documentación e información de acceso restringido (confidencial).",
+    "vicios_ocultos": "El contratista es el responsable por la calidad ofrecida y por los vicios ocultos en la presente contratación ofertada por un plazo no menor de 1 año, contando a partir de la conformidad otorgada por el responsable de la MDCH.",
+    "resolucion_controversias": "Todas las controversias que surjan entre las partes sobre la validez, nulidad, interpretación, ejecución, terminación o eficacia, se resuelven mediante conciliación, conforme a lo dispuesto en el numeral 81.3 del Art. 81° de la Ley N°32069 - Ley General de Contrataciones Públicas. Todos los conflictos que se deriven de la ejecución e interpretación de la presente contratación, son resueltos mediante trato directo, conciliación y/o acción judicial."
+  },
+  "summary": {
+    "descripcion_corta": "Se contrata el servicio de elaboración de la liquidación físico-financiero de obra para determinar el estado técnico y financiero de la obra ejecutada. La entidad convocante es la Municipalidad Distrital de Chilca. El plazo de ejecución es de 30 días calendario. El pago es único del 100% al culminar el servicio y contar con la conformidad. Se exige experiencia específica en liquidaciones de obra y personal clave con título profesional, colegiatura, habilitación y experiencia.",
+    "observaciones_clave": [
+      "Penalidad por mora del 10% del monto de la contratación o ítem.",
+      "Penalidad adicional según Directiva N° 001-2025-SGA/GA-MDCH.",
+      "El plazo de pago es de hasta 10 días calendario posteriores a la conformidad.",
+      "La conformidad la otorga el Responsable del área de liquidaciones de obras en un plazo máximo de 5 días calendario.",
+      "Se requiere experiencia específica del proveedor y del personal clave en liquidaciones de obra."
+    ]
+  }
+}

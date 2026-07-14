@@ -1,0 +1,113 @@
+.toolbar {
+  display: grid;
+  gap: var(--bp-space-3);
+  margin-bottom: var(--bp-space-4);
+}
+
+.quickFilters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bp-space-2);
+}
+
+.quickFilters a {
+  align-items: center;
+  background: var(--bp-color-panel);
+  border: 1px solid var(--bp-color-border);
+  border-radius: 999px;
+  color: var(--bp-color-text-2);
+  display: inline-flex;
+  font-size: 12px;
+  font-weight: 750;
+  min-height: 30px;
+  padding: 5px 10px;
+}
+
+.quickFilters a:hover,
+.quickFilters .activeFilter {
+  background: var(--bp-color-brand-soft);
+  border-color: color-mix(in srgb, var(--bp-color-brand) 28%, var(--bp-color-border));
+  color: var(--bp-color-brand);
+}
+
+.primary {
+  align-items: end;
+  display: grid;
+  gap: var(--bp-space-3);
+  grid-template-columns: minmax(260px, 1.4fr) minmax(150px, 0.7fr) minmax(140px, 0.6fr) minmax(150px, 0.6fr) auto;
+}
+
+.toolbar label {
+  color: var(--bp-color-text-2);
+  display: grid;
+  font-size: 12px;
+  font-weight: 700;
+  gap: var(--bp-space-1);
+}
+
+.search {
+  min-width: 0;
+}
+
+.more {
+  color: var(--bp-color-text-2);
+}
+
+.more summary {
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 700;
+  padding: var(--bp-space-2) 0;
+}
+
+.advanced {
+  align-items: end;
+  background: var(--bp-color-panel);
+  border: 1px solid var(--bp-color-border);
+  display: grid;
+  gap: var(--bp-space-3);
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  margin-top: var(--bp-space-1);
+  padding: var(--bp-space-3);
+}
+
+.clear {
+  color: var(--bp-color-text-2);
+  font-weight: 700;
+  min-height: 42px;
+  padding-top: 10px;
+}
+
+.clear:hover {
+  color: var(--bp-color-brand);
+}
+
+@media (max-width: 900px) {
+  /* La primera pantalla mobile debe mostrar contratos, no una columna de filtros:
+     chips en fila con scroll horizontal y selects a 2 columnas. */
+  .quickFilters {
+    flex-wrap: nowrap;
+    margin: 0 calc(var(--bp-space-4) * -1);
+    overflow-x: auto;
+    padding: 0 var(--bp-space-4) 2px;
+    scrollbar-width: none;
+  }
+
+  .quickFilters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .quickFilters a {
+    flex: none;
+  }
+
+  .primary {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .primary .search,
+  .primary > button {
+    grid-column: 1 / -1;
+  }
+}

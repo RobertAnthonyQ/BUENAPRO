@@ -1,0 +1,30 @@
+.empty {
+  align-items: flex-start;
+  background: var(--bp-color-panel);
+  border: 1px solid var(--bp-color-border);
+  border-radius: var(--bp-radius-lg);
+  display: grid;
+  gap: var(--bp-space-3);
+  padding: var(--bp-space-6);
+}
+
+.mark {
+  background: var(--bp-color-brand);
+  border-radius: 2px;
+  height: 18px;
+  width: 18px;
+}
+
+.empty h2 {
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.empty p {
+  color: var(--bp-color-text-2);
+  max-width: 560px;
+}
+
+.link {
+  display: inline-flex;
+}
