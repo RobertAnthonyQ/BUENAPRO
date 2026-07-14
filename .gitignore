@@ -16,3 +16,6 @@ data/
 tmp/
 .claude/settings.local.json
 
+credentials/
+*.pem
+*.key
