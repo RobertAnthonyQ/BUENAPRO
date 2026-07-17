@@ -9,6 +9,7 @@ import {
   buildPatch,
   jsonError,
 } from "@/server/services/crud";
+import { keywordSignals } from "@/server/services/keywordSignals";
 
 export async function GET(_request: NextRequest, context: { params: Promise<{ id: string }> }) {
   const tenantId = await requireTenantId();
@@ -32,12 +33,17 @@ export async function PATCH(request: NextRequest, context: { params: Promise<{ i
 
   try {
     const body = await request.json();
+    const hasKeywordPatch = body.keywords != null || body.keyword_phrases != null || body.keyword_terms != null;
+    const signals = hasKeywordPatch ? keywordSignals(body) : null;
+    const patchBody = signals ? { ...body, ...signals } : body;
     const patch = buildPatch(
-      body,
+      patchBody,
       [
         { column: "nombre", transform: (value) => asRequiredString(value, "nombre") },
         { column: "cubso_segmentos", transform: (value) => asStringArray(value, "cubso_segmentos") },
         { column: "keywords", transform: (value) => asStringArray(value, "keywords") },
+        { column: "keyword_phrases", transform: (value) => asStringArray(value, "keyword_phrases") },
+        { column: "keyword_terms", transform: (value) => asStringArray(value, "keyword_terms") },
         { column: "ubigeos", transform: (value) => asStringArray(value, "ubigeos") },
         { column: "monto_min", transform: (value) => asNullableNumber(value, "monto_min") },
         { column: "monto_max", transform: (value) => asNullableNumber(value, "monto_max") },

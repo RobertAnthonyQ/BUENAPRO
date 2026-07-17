@@ -97,7 +97,7 @@ export const verdictShortLabels: Record<string, string> = {
 
 /**
  * Fit de rubro: base 50 por segmento CUBSO + keywords ponderadas por
- * especificidad (multi-palabra 15, genérica 6, tope 45) + factor económico
+ * especificidad (frase exacta 15, término fuerte explícito 10, topes 30/45) + factor económico
  * moderado (±8: compara el monto de experiencia económica exigido contra la
  * facturación acreditable de la empresa; pesa poco porque un consorcio puede
  * cubrir el gap). Los puntos llegan calculados del SQL (`fit_points`).
@@ -106,9 +106,9 @@ export function fitScore(fitPoints: number | null | undefined): number {
   return 50 + Math.min(50, Math.max(0, Number(fitPoints ?? 0)));
 }
 
-/** Umbrales calibrados a los pesos 15/6: "exacto" exige ≥2 señales fuertes. */
+/** "Exacto" exige al menos 30 puntos; "relacionado", un término fuerte sobre la base CUBSO. */
 export const FIT_EXACTO = 80;
-export const FIT_RELACIONADO = 62;
+export const FIT_RELACIONADO = 60;
 
 export function fitLabel(fitPoints: number | null | undefined): string {
   const fit = fitScore(fitPoints);

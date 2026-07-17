@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { query } from "@/server/db/client";
 import { requireTenantId } from "@/server/auth/tenant";
+import { keywordSignals } from "@/server/services/keywordSignals";
 
 async function enqueueProfileMatch(profileId: string) {
   await query(
@@ -33,17 +34,21 @@ export async function PATCH(request: NextRequest, context: { params: Promise<{ i
   const tenantId = await requireTenantId();
   const { id } = await context.params;
   const body = await request.json();
+  const hasKeywordPatch = body.keywords != null || body.keyword_phrases != null || body.keyword_terms != null;
+  const signals = hasKeywordPatch ? keywordSignals(body) : null;
   const result = await query(
     `
     UPDATE business_lines bl
     SET nombre = COALESCE($3, bl.nombre),
         cubso_segmentos = COALESCE($4, bl.cubso_segmentos),
         keywords = COALESCE($5, bl.keywords),
-        ubigeos = COALESCE($6, bl.ubigeos),
-        monto_min = COALESCE($7, bl.monto_min),
-        monto_max = COALESCE($8, bl.monto_max),
-        score_umbral = COALESCE($9, bl.score_umbral),
-        is_active = COALESCE($10, bl.is_active),
+        keyword_phrases = COALESCE($6, bl.keyword_phrases),
+        keyword_terms = COALESCE($7, bl.keyword_terms),
+        ubigeos = COALESCE($8, bl.ubigeos),
+        monto_min = COALESCE($9, bl.monto_min),
+        monto_max = COALESCE($10, bl.monto_max),
+        score_umbral = COALESCE($11, bl.score_umbral),
+        is_active = COALESCE($12, bl.is_active),
         updated_at = now()
     FROM company_profiles cp
     WHERE cp.id = bl.profile_id
@@ -56,7 +61,9 @@ export async function PATCH(request: NextRequest, context: { params: Promise<{ i
       id,
       body.nombre ?? null,
       body.cubso_segmentos ?? null,
-      body.keywords ?? null,
+      signals?.keywords ?? null,
+      signals?.keyword_phrases ?? null,
+      signals?.keyword_terms ?? null,
       body.ubigeos ?? null,
       body.monto_min ?? null,
       body.monto_max ?? null,

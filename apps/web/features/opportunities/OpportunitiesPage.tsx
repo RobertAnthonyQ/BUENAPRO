@@ -53,8 +53,9 @@ export async function OpportunitiesPage({ tenantId, params }: { tenantId: string
   if (!params.has("has_extraction")) params.set("has_extraction", "true");
   if (!params.has("estado")) params.set("estado", "2");
   normalizeDeadline(params);
-  const contracts = await listContractsForTenant(tenantId, params);
   const context = await getTenantOpportunityContext(tenantId);
+  const hasBusinessLines = context.lines.length > 0;
+  const contracts = await listContractsForTenant(tenantId, params);
   const rows = contracts.data;
   const meta = contracts.meta;
   const activeLines = context.lines.slice(0, 3);
@@ -72,7 +73,11 @@ export async function OpportunitiesPage({ tenantId, params }: { tenantId: string
               {meta.total ?? meta.count} {resultLabel(deadline)}
             </span>
           </div>
-          <p>Contratos menores de SEACE priorizados para {context.razon_social}.</p>
+          <p>
+            {hasBusinessLines
+              ? `Todas las coincidencias para ${context.razon_social}, de mayor a menor afinidad.`
+              : "Configura tus líneas de negocio para priorizar las mejores coincidencias."}
+          </p>
           {activeLines.length ? (
             <div className={styles.lines}>
               {activeLines.map((line) => (

@@ -30,12 +30,15 @@ function deadlineUrgency(value?: string | null) {
 
 function FitMark({ hits, compact = false }: { hits?: number | null; compact?: boolean }) {
   const score = fitScore(hits);
+  const points = Number(hits ?? 0);
   const level = score >= FIT_EXACTO ? 3 : score >= FIT_RELACIONADO ? 2 : 1;
   const tone = level === 3 ? styles.fitHigh : level === 2 ? styles.fitMid : styles.fitBase;
+  const explanation = `Afinidad ${score}/100 · ${points} puntos por rubro, keywords y capacidad económica.`;
   return (
     <span
+      aria-label={explanation}
       className={[styles.fitMark, tone].join(" ")}
-      title="Nivel de afinidad por rubro y keywords. El score numérico aparece al evaluar con IA."
+      title={explanation}
     >
       <span className={styles.fitDots} aria-hidden="true">
         {[1, 2, 3].map((dot) => (

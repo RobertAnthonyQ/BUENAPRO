@@ -108,6 +108,8 @@ Referencia: [Inicio](../docs/frontend/02-inicio.md)
 - [x] Sin perfil: mostrar CTA a Perfil sin bloquear exploracion.
 - [x] Refactor visual 2026-07-09: vista rapida lateral en panel claro (paleta terracota/carbon), acciones Abrir detalle/Seguir arriba del panel, columnas Plazo y Match con datos derivados reales. Evidencia: `docs/qa/screenshots/feed-redesign-preview-2026-07-09.png`, `feed-redesign-mobile-2026-07-09.png`.
 - [x] Mapeo robusto de summary/facets via `lib/extraction/opportunity.ts` (summary derivado -> filter index -> extraccion cruda); validado contra JSON real de 5 contratos.
+- [x] Priorizar todas las oportunidades por afinidad absoluta: conservar rubro exacto, relacionado y general, ordenar de mayor a menor `fit_points` y exponer el puntaje numérico al pasar sobre los puntos. SQL y render SSR validados el 2026-07-16.
+- [ ] Capturar y revisar el feed priorizado en desktop y mobile; bloqueo 2026-07-16: navegador interno sin instancias disponibles (`iab` no disponible).
 
 Referencia: [Oportunidades](../docs/frontend/03-oportunidades.md)
 

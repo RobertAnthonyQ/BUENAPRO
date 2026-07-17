@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { requireTenantId } from "@/server/auth/tenant";
 import { pool } from "@/server/db/client";
+import { keywordSignals } from "@/server/services/keywordSignals";
 
 function strings(value: unknown, max = 20): string[] {
   return Array.isArray(value)
@@ -22,7 +23,7 @@ export async function POST(request: NextRequest) {
   const rawLines = Array.isArray(body.business_lines) ? body.business_lines : [];
   const lines = rawLines.slice(0, 8).map((line: any) => ({
     name: String(line?.name ?? "").trim().slice(0, 90),
-    keywords: strings(line?.keywords, 20).map((keyword) => keyword.toLowerCase()),
+    ...keywordSignals(line),
     cubso_segmentos: strings(line?.cubso_segmentos, 3),
   })).filter((line: { name: string; keywords: string[]; cubso_segmentos: string[] }) => line.name && line.keywords.length && line.cubso_segmentos.length);
 
@@ -76,8 +77,8 @@ export async function POST(request: NextRequest) {
     await client.query("DELETE FROM business_lines WHERE profile_id = $1", [profileId]);
     for (const line of lines) {
       await client.query(
-        `INSERT INTO business_lines (profile_id, nombre, cubso_segmentos, keywords, score_umbral) VALUES ($1, $2, $3, $4, 70)`,
-        [profileId, line.name, line.cubso_segmentos, line.keywords],
+        `INSERT INTO business_lines (profile_id, nombre, cubso_segmentos, keywords, keyword_phrases, keyword_terms, score_umbral) VALUES ($1, $2, $3, $4, $5, $6, 70)`,
+        [profileId, line.name, line.cubso_segmentos, line.keywords, line.keyword_phrases, line.keyword_terms],
       );
     }
     await client.query(

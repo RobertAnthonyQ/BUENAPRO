@@ -9,6 +9,7 @@ import {
   getTenantProfileId,
   jsonError,
 } from "@/server/services/crud";
+import { keywordSignals } from "@/server/services/keywordSignals";
 
 export async function GET(request: NextRequest) {
   const tenantId = await requireTenantId();
@@ -45,22 +46,25 @@ export async function POST(request: NextRequest) {
 
   try {
     const body = await request.json();
+    const signals = keywordSignals(body);
     const profileId = await getTenantProfileId(tenantId, body.profile_id);
     if (!profileId) return jsonError("Profile required", 400);
 
     const result = await query(
       `
       INSERT INTO business_lines (
-        profile_id, nombre, cubso_segmentos, keywords, ubigeos, monto_min, monto_max, score_umbral, is_active
+        profile_id, nombre, cubso_segmentos, keywords, keyword_phrases, keyword_terms, ubigeos, monto_min, monto_max, score_umbral, is_active
       )
-      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, COALESCE($9, true))
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, COALESCE($11, true))
       RETURNING *
       `,
       [
         profileId,
         asRequiredString(body.nombre, "nombre"),
         asStringArray(body.cubso_segmentos, "cubso_segmentos"),
-        asStringArray(body.keywords, "keywords"),
+        signals.keywords,
+        signals.keyword_phrases,
+        signals.keyword_terms,
         asStringArray(body.ubigeos, "ubigeos"),
         asNullableNumber(body.monto_min, "monto_min"),
         asNullableNumber(body.monto_max, "monto_max"),

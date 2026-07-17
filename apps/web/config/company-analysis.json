@@ -1,0 +1,75 @@
+{
+  "prompt": {
+    "version": "company_profile_v2",
+    "filename": "company_profile_v2.txt"
+  },
+  "website": {
+    "timeout_ms": 8000,
+    "max_redirects": 2,
+    "max_header_bytes": 131072,
+    "max_html_bytes": 750000,
+    "max_pages": 4,
+    "max_text_chars_per_page": 16000,
+    "max_combined_text_chars": 42000,
+    "relevant_link_terms": [
+      "areas",
+      "area",
+      "servicios",
+      "servicio",
+      "practicas",
+      "practica",
+      "especialidades",
+      "especialidad",
+      "soluciones",
+      "productos",
+      "producto",
+      "expertise",
+      "services",
+      "practice"
+    ],
+    "excluded_link_terms": [
+      "blog",
+      "noticias",
+      "news",
+      "eventos",
+      "events",
+      "contacto",
+      "contact",
+      "login",
+      "intranet",
+      "privacidad",
+      "privacy",
+      "terminos",
+      "terms"
+    ]
+  },
+  "keyword_scoring": {
+    "exact_phrase": 15,
+    "strong_term": 10,
+    "term_cap": 30,
+    "total_cap": 45,
+    "forbidden_terms": [
+      "asesoria",
+      "consultoria",
+      "contratacion",
+      "contrataciones",
+      "administrativo",
+      "entidad",
+      "entidades",
+      "empresa",
+      "empresas",
+      "especialista",
+      "especializado",
+      "gestion",
+      "profesional",
+      "profesionales",
+      "proveedor",
+      "proveedores",
+      "servicio",
+      "servicios",
+      "solucion",
+      "soluciones",
+      "tecnologia"
+    ]
+  }
+}

@@ -77,6 +77,7 @@
 
 - [x] Crear tabla `company_profiles`.
 - [x] Crear tabla `business_lines`.
+- [x] Separar frases exactas y términos fuertes de cada línea de negocio (migración `0014`) sin perder compatibilidad con `keywords`.
 - [x] Agregar `profile_hash`.
 - [x] Agregar campos JSON para identidad, experiencia, equipo, roles contratables y certificaciones.
 

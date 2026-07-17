@@ -53,6 +53,7 @@
 - [x] API tenant-safe para subir, descargar y eliminar adjuntos del borrador (PDF/Word/Excel, máximo 10 MB, PostgreSQL sin R2). Ciclo completo y aislamiento entre tenants validados con match 21.
 - [x] Copiloto tenant-safe por licitación: memoria PostgreSQL, Gemini con citas, lectura acotada de TDR/DOCX/perfil/borrador, compactación y change sets con confirmación manual; nunca envía a SEACE. Agente real y confirm/reject validados con contrato 78753.
 - [x] Ejecutar el análisis manual perfil–licitación directamente en `POST /api/contracts/:id/analyze`, sin `worker-llm`: conserva prompt v2, schema, reglas económicas, score estable, persistencia y costos. Validado con contrato 78764 usando `gemini-3.1-flash-lite`; job pendiente anterior cerrado automáticamente.
+- [x] Robustecer onboarding empresa: prompt externo versionado, modelo Gemini configurable, crawl seguro multipágina, evidencia por URL, frases/términos separados y guardas CUBSO por servicio vendido. Motor de fit por línea y segmento con frase exacta 15, término fuerte explícito 10, sin división automática, topes 30/45 y hits explicables.
 
 ## Feed
 

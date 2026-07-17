@@ -1,8 +1,8 @@
 import { query } from "@/server/db/client";
 import { pagination } from "@/server/services/crud";
+import { keywordFitLateralSql } from "@/server/services/keywordScoring";
 
 export async function getContractForTenant(tenantId: string, idContrato: number) {
-  const keywords = await tenantKeywords(tenantId);
   const econCapacity = await tenantEconCapacity(tenantId);
   const result = await query(
     `
@@ -11,14 +11,10 @@ export async function getContractForTenant(tenantId: string, idContrato: number)
       obj.nombre AS objeto_nombre,
       st.nombre AS estado_nombre,
       econ.exigido AS econ_exigido,
-      (
-        LEAST(45, (
-          SELECT COALESCE(sum(CASE WHEN kw LIKE '% %' THEN 15 ELSE 6 END), 0)
-          FROM unnest($3::text[]) kw
-          WHERE translate(lower(c.descripcion), 'áéíóúñü', 'aeiounu')
-            LIKE '%' || translate(lower(kw), 'áéíóúñü', 'aeiounu') || '%'
-        )) + ${ECON_FACTOR_SQL(4)}
-      )::int AS fit_points,
+      (COALESCE(fit.keyword_points, 0) + ${ECON_FACTOR_SQL(3)})::int AS fit_points,
+      fit.business_line_id AS fit_business_line_id,
+      fit.business_line_name AS fit_business_line_name,
+      COALESCE(fit.keyword_hits, '[]'::jsonb) AS fit_keyword_hits,
       fi.tipo_pago,
       fi.penalidad_tope_pct,
       fi.entregables_count,
@@ -57,11 +53,12 @@ export async function getContractForTenant(tenantId: string, idContrato: number)
       ORDER BY tx.created_at DESC
       LIMIT 1
     ) te ON true
+    ${keywordFitLateralSql(2)}
     ${ECON_LATERAL_SQL}
     WHERE c.id_contrato = $1
     LIMIT 1
     `,
-    [idContrato, tenantId, keywords, econCapacity],
+    [idContrato, tenantId, econCapacity],
   );
   const contract = result.rows[0] ?? null;
   if (!contract) return null;
@@ -125,23 +122,8 @@ const ECON_LATERAL_SQL = `
   ) econ ON true
 `;
 
-async function tenantKeywords(tenantId: string): Promise<string[]> {
-  const result = await query(
-    `
-    SELECT DISTINCT lower(kw) AS kw
-    FROM company_profiles cp
-    JOIN business_lines bl ON bl.profile_id = cp.id AND bl.is_active = true
-    CROSS JOIN LATERAL unnest(bl.keywords) kw
-    WHERE cp.tenant_id = $1 AND cp.is_active = true
-    `,
-    [tenantId],
-  );
-  return result.rows.map((row) => row.kw as string).filter(Boolean);
-}
-
 export async function listContractsForTenant(tenantId: string, params: URLSearchParams) {
   const { limit, offset, page, pageSize } = pagination(params);
-  const keywords = await tenantKeywords(tenantId);
   const econCapacity = await tenantEconCapacity(tenantId);
   const values: unknown[] = [tenantId];
   const where: string[] = [];
@@ -238,11 +220,9 @@ export async function listContractsForTenant(tenantId: string, params: URLSearch
     where.push(`c.fec_fin_cotizacion <= $${values.length}::timestamptz`);
   }
 
-  const whereSql = where.length ? `WHERE ${where.join(" AND ")}` : "";
-  values.push(keywords);
-  const keywordsParam = values.length;
   values.push(econCapacity);
   const econParam = values.length;
+  const whereSql = where.length ? `WHERE ${where.join(" AND ")}` : "";
   values.push(limit, offset);
 
   const result = await query(
@@ -280,14 +260,10 @@ export async function listContractsForTenant(tenantId: string, params: URLSearch
       m.verdict,
       m.user_state,
       econ.exigido AS econ_exigido,
-      (
-        LEAST(45, (
-          SELECT COALESCE(sum(CASE WHEN kw LIKE '% %' THEN 15 ELSE 6 END), 0)
-          FROM unnest($${keywordsParam}::text[]) kw
-          WHERE translate(lower(c.descripcion), 'áéíóúñü', 'aeiounu')
-            LIKE '%' || translate(lower(kw), 'áéíóúñü', 'aeiounu') || '%'
-        )) + ${ECON_FACTOR_SQL(econParam)}
-      )::int AS fit_points,
+      (COALESCE(fit.keyword_points, 0) + ${ECON_FACTOR_SQL(econParam)})::int AS fit_points,
+      fit.business_line_id AS fit_business_line_id,
+      fit.business_line_name AS fit_business_line_name,
+      COALESCE(fit.keyword_hits, '[]'::jsonb) AS fit_keyword_hits,
       count(*) OVER()::int AS total_count
     FROM seace_contracts c
     LEFT JOIN cat_seace_objects obj ON obj.codigo = c.objeto_codigo
@@ -309,18 +285,13 @@ export async function listContractsForTenant(tenantId: string, params: URLSearch
       ORDER BY m.score DESC, m.updated_at DESC
       LIMIT 1
     ) m ON true
+    ${keywordFitLateralSql(1)}
     ${ECON_LATERAL_SQL}
     ${whereSql}
     ORDER BY
+      COALESCE(fit.keyword_points, 0) DESC,
+      fit_points DESC,
       m.score DESC NULLS LAST,
-      (
-        LEAST(45, (
-          SELECT COALESCE(sum(CASE WHEN kw LIKE '% %' THEN 15 ELSE 6 END), 0)
-          FROM unnest($${keywordsParam}::text[]) kw
-          WHERE translate(lower(c.descripcion), 'áéíóúñü', 'aeiounu')
-            LIKE '%' || translate(lower(kw), 'áéíóúñü', 'aeiounu') || '%'
-        )) + ${ECON_FACTOR_SQL(econParam)}
-      ) DESC,
       c.fec_fin_cotizacion ASC NULLS LAST,
       c.fec_publica DESC NULLS LAST
     LIMIT $${values.length - 1}
